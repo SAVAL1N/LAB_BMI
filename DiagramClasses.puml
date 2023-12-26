@@ -1,0 +1,53 @@
+@startuml
+class com.example.java_lab2.Indicator {
+- HBox panel
++ void add(Pane)
++ void remove(Pane)
++ void show(Pane)
+}
+class com.example.java_lab2.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class com.example.java_lab2.BuilderIndicator {
+~ Indicator indicator
+~ Pane pane
++ void lineRectangle(int,int,Color)
++ void line(int,double)
++ Indicator Build()
++ void remove()
+}
+class com.example.java_lab2.Director {
+~ BuilderIndicator builder
++ Indicator Constr(Color,double)
++ void hidden()
+}
+class com.example.java_lab2.Imt_class {
+- double mass_p
+- double rost_p
++ void setMass_p(String)
++ void setRost_p(String)
++ double getImt()
++ String toString()
+}
+interface com.example.java_lab2.Builder {
++ void lineRectangle(int,int,Color)
++ void line(int,double)
++ Indicator Build()
+}
+class com.example.java_lab2.HelloController {
+- Imt_class bmi
++ TextField mass
++ TextField rost
++ Button btnRes
++ Label msg
++ Indicator indicator
++ boolean indicatorOk
++ HBox panel
++ void BMI(ActionEvent)
+}
+
+
+javafx.application.Application <|-- com.example.java_lab2.HelloApplication
+com.example.java_lab2.Builder <|.. com.example.java_lab2.BuilderIndicator
+@enduml

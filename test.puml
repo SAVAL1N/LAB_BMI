@@ -1,0 +1,29 @@
+@startuml
+class com.example.java_lab2.Director {
+~ BuilderIndicator builder
++ Indicator Constr(Color,double)
++ void hidden()
+}
+class com.example.java_lab2.BuilderIndicator {
+~ Indicator indicator
+~ Pane pane
++ void lineRectangle(int,int,Color)
++ void line(int,double)
++ Indicator Build()
++ void remove()
+}
+class com.example.java_lab2.Indicator {
+- HBox panel
++ void add(Pane)
++ void remove(Pane)
++ void show(Pane)
+}
+interface com.example.java_lab2.Builder {
++ void lineRectangle(int,int,Color)
++ void line(int,double)
++ Indicator Build()
+}
+
+
+com.example.java_lab2.Builder <|.. com.example.java_lab2.BuilderIndicator
+@enduml

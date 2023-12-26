@@ -1,0 +1,6 @@
+@startuml
+class MyClass {
+  - field1: Type
+  + method1()
+}
+@enduml
